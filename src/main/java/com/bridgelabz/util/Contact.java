@@ -7,12 +7,21 @@ public class Contact {
     List<Person> PERSON = new ArrayList<>();
 
     public void addRecord() {
-        final String firstname, lastname, address, city, state, phone, zip;
-
-        System.out.print("Enter First Name : ");
-        firstname = InputUtil.getStringValue();
+        int i=0;
+        String firstName = null;
+        final String lastName, address, city, state, phone,zip;
+        while(i==0) {
+            System.out.print("Enter First Name : ");
+            firstName = InputUtil.getStringValue();
+            if (checkExists(firstName)) {
+                System.out.println("Person Name Already Exists!!\nPlease enter different name...");
+            }
+            else {
+                i=1;
+            }
+        }
         System.out.print("Enter Last Name : ");
-        lastname = InputUtil.getStringValue();
+        lastName = InputUtil.getStringValue();
         System.out.print("Enter Phone Number : ");
         phone = InputUtil.getStringValue();
         System.out.print("Enter Address : ");
@@ -24,7 +33,7 @@ public class Contact {
         System.out.print("Enter state : ");
         state = InputUtil.getStringValue();
 
-        PERSON.add(new Person(firstname, lastname, address, city, state, phone, zip));
+        PERSON.add(new Person(firstName,lastName,address,city,state,phone,zip));
     }
     public void displayRecord() {
         int id;
@@ -115,6 +124,19 @@ public class Contact {
         System.out.print("\nEnter #ID to delete Contact : ");
         id = InputUtil.getIntValue();
         PERSON.remove(id);
+    }
+    public boolean checkExists(String firstname)
+    {
+        int flag=0;
+        for (Person p: PERSON)
+        {
+            if (p.getFirstName().equals(firstname))
+            {
+                flag=1;
+                break;
+            }
+        }
+        return flag == 1;
     }
 }
 
