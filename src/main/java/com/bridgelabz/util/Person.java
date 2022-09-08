@@ -91,6 +91,28 @@ public class Person {
 
         return firstname1.compareTo(firstname2);
     };
+    public static Comparator<Person> citySorting = (p1, p2) -> {
+        String city1 = p1.getCity();
+        String city2 = p2.getCity();
+
+        return city1.compareToIgnoreCase(city2);
+    };
+
+    public static Comparator<Person> stateSorting = (p1, p2) -> {
+        String state1 = p1.getState();
+        String state2 = p2.getState();
+
+        return state1.compareToIgnoreCase(state2);
+    };
+
+    public static Comparator<Person> zipSorting = (p1, p2) -> {
+        String zip1 = p1.getZip();
+        String zip2 = p2.getZip();
+
+        return zip1.compareToIgnoreCase(zip2);
+    };
+
+
 
     @Override
     public String toString() {
