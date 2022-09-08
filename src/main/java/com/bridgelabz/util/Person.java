@@ -1,5 +1,7 @@
 package com.bridgelabz.util;
 
+import java.util.Comparator;
+
 public class Person {
     private String firstName, lastName, address, city, state, phone,zip;
 
@@ -83,6 +85,12 @@ public class Person {
     {
         this.zip = zip;
     }
+    public static Comparator<Person> firstNameSorting = (p1, p2) -> {
+        String firstname1 = p1.getFirstName();
+        String firstname2 = p2.getFirstName();
+
+        return firstname1.compareTo(firstname2);
+    };
 
     @Override
     public String toString() {

@@ -195,6 +195,9 @@ public class Contact {
         return stateDict;
     }
 
-
+    public void sortRecords()
+    {
+        Sort.sortByName(PERSON);
+    }
 }
 

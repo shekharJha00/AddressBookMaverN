@@ -18,7 +18,8 @@ public class AddressBook {
                 System.out.println("4: Delete Person     ");
                 System.out.println("5: Search");
                 System.out.println("6: View Person By State and City");
-                System.out.println("7: Exit		       \n");
+                System.out.println("7: Sort by Name");
+                System.out.println("8: Exit		       \n");
 
                 System.out.println("--- Enter Your Choice ---");
                 choice = InputUtil.getIntValue();
@@ -29,7 +30,8 @@ public class AddressBook {
                     case 4 -> contactDetails.deleteRecord();
                     case 5 ->contactDetails.searchByCityState();
                     case 6 ->contactDetails.viewByCityAndState();
-                    case 7 -> i = 1;
+                    case 7 ->contactDetails.sortRecords();
+                    case 8 -> i = 1;
                     default -> System.out.println("Please Enter Valid Option!!!");
                 }
             }
