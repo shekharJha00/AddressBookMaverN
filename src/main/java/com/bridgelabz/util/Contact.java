@@ -27,13 +27,19 @@ public class Contact {
         PERSON.add(new Person(firstname, lastname, address, city, state, phone, zip));
     }
     public void displayRecord() {
-        for (Person person : PERSON) {
-            System.out.println(person);
+        int id;
+        for(Person p: PERSON)
+        {
+            System.out.println("ID: #"+PERSON.indexOf(p)+" : "+p);
         }
-
+        System.out.print("\nEnter #ID to delete Contact : ");
+        id = InputUtil.getIntValue();
+        PERSON.remove(id);
     }
+
+
     public void editRecord() {
-        int id, choice = 0, i = 0;
+        int id, choice, i = 0;
         String firstname, lastname, address, city, state, phone, zip;
         for (Person person : PERSON) {
             System.out.println("ID: #" + PERSON.indexOf(person) + " : " + person);
@@ -42,15 +48,17 @@ public class Contact {
         id = InputUtil.getIntValue();
         System.out.println(PERSON.get(id));
         while (i == 0) {
-            System.out.println("What You Want to edit...\n"
-                    + "\t1: First Name\n"
-                    + "\t2:Last Name\n"
-                    + "\t3: State\n"
-                    + "\t4: Phone\n"
-                    + "\t5: Zip Code\n"
-                    + "\t6. Address\n"
-                    +"\t7.city\n"
-                    +"\t8.Save And Exit\n");
+            System.out.println("""
+                    What You Want to edit...
+                    \t1: First Name
+                    \t2:Last Name
+                    \t3: State
+                    \t4: Phone
+                    \t5: Zip Code
+                    \t6. Address
+                    \t7.city
+                    \t8.Save And Exit
+                    """);
             choice = InputUtil.getIntValue();
             switch (choice) {
 
