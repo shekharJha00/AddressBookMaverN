@@ -5,6 +5,11 @@ import java.util.Dictionary;
 import java.util.List;
 
 public class Search {
+    public static void searchByCityAndState(Dictionary<String,String> cityDict,Dictionary<String,String> stateDict)
+    {
+        System.out.println("In Progress...");
+    }
+
     public static void searchByCity(List<Person> person)
     {
         String search ;
