@@ -16,7 +16,8 @@ public class AddressBook {
                 System.out.println("2: Display Records     ");
                 System.out.println("3: Edit Person     ");
                 System.out.println("4: Delete Person     ");
-                System.out.println("5: Exit		       \n");
+                System.out.println("5: Search");
+                System.out.println("6: Exit		       \n");
 
                 System.out.println("--- Enter Your Choice ---");
                 choice = InputUtil.getIntValue();
@@ -25,7 +26,8 @@ public class AddressBook {
                     case 2 -> contactDetails.displayRecord();
                     case 3 -> contactDetails.editRecord();
                     case 4 -> contactDetails.deleteRecord();
-                    case 5 -> i = 1;
+                    case 5 ->contactDetails.searchByCityState();
+                    case 6 -> i = 1;
                     default -> System.out.println("Please Enter Valid Option!!!");
                 }
             }
