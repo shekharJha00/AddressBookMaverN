@@ -35,11 +35,11 @@ public class Contact {
 
         PERSON.add(new Person(firstName,lastName,address,city,state,phone,zip));
     }
-
     public void displayRecord() {
         int id;
-        for (Person p : PERSON) {
-            System.out.println("ID: #" + PERSON.indexOf(p) + " : " + p);
+        for(Person p: PERSON)
+        {
+            System.out.println("ID: #"+PERSON.indexOf(p)+" : "+p);
         }
         System.out.print("\nEnter #ID to delete Contact : ");
         id = InputUtil.getIntValue();
@@ -73,12 +73,12 @@ public class Contact {
 
                 case 1 -> {
                     System.out.println("Enter new First Name :");
-                    firstname = InputUtil.getStringValue();
+                    firstname=InputUtil.getStringValue();
                     PERSON.get(id).setFirstName(firstname);
                 }
                 case 2 -> {
                     System.out.println("Enter new Last Name : ");
-                    lastname = InputUtil.getStringValue();
+                    lastname=InputUtil.getStringValue();
                     PERSON.get(id).setLastName(lastname);
                 }
                 case 3 -> {
@@ -96,13 +96,14 @@ public class Contact {
                     zip = InputUtil.getStringValue();
                     PERSON.get(id).setZip(zip);
                 }
-                case 6 -> {
+                case  6 ->{
                     System.out.print("Enter new Address : ");
                     address = InputUtil.getStringValue();
                     PERSON.get(id).setAddress(address);
                 }
 
-                case 7 -> {
+                case 7 ->
+                {
                     System.out.print("Enter new City : ");
                     city = InputUtil.getStringValue();
                     PERSON.get(id).setCity(city);
@@ -116,8 +117,9 @@ public class Contact {
 
     public void deleteRecord() {
         int id;
-        for (Person p : PERSON) {
-            System.out.println("ID: #" + PERSON.indexOf(p) + " : " + p);
+        for(Person p: PERSON)
+        {
+            System.out.println("ID: #"+PERSON.indexOf(p)+" : "+p);
         }
         System.out.print("\nEnter #ID to delete Contact : ");
         id = InputUtil.getIntValue();
@@ -137,6 +139,4 @@ public class Contact {
         return flag == 1;
     }
 }
-
-
 
