@@ -1,13 +1,13 @@
 package com.bridgelabz.main;
 
-import com.bridgelabz.util.ContactDetails;
+import com.bridgelabz.util.Contact;
 import com.bridgelabz.util.InputUtil;
 
 public class AddressBook {
     public static void main(String[] args) {
 
             int choice,i=0;
-            final ContactDetails contactDetails = new ContactDetails();
+            final Contact contactDetails = new Contact();
             while(i==0)
             {
                 System.out.println("--- Address Book ---\n");
