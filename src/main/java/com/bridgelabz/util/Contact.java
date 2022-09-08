@@ -138,5 +138,29 @@ public class Contact {
         }
         return flag == 1;
     }
+    public void searchByCityState()
+    {
+        int choice=0;
+        System.out.println("Search By\n" +
+                "1: City\n" +
+                "2: State\n" +
+                "3: back");
+        choice=InputUtil.getIntValue();
+        switch (choice)
+        {
+            case 1 :
+                Search.searchByCity(PERSON);
+                break;
+            case 2 :
+                Search.searchByState(PERSON);
+                break;
+            case 3 :
+                return;
+            default:
+                System.out.println("Enter Valid Option");
+        }
+    }
+
+
 }
 
