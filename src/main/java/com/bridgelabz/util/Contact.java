@@ -3,7 +3,7 @@ package com.bridgelabz.util;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContactDetails {
+public class Contact {
     List<Person> p = new ArrayList<>();
     public void addRecord()
     {
