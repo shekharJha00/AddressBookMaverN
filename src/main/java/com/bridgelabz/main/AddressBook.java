@@ -18,7 +18,7 @@ public class AddressBook {
                 System.out.println("4: Delete Person     ");
                 System.out.println("5: Search");
                 System.out.println("6: View Person By State and City");
-                System.out.println("7: Sort by Name");
+                System.out.println("7: Sort Person");
                 System.out.println("8: Exit		       \n");
 
                 System.out.println("--- Enter Your Choice ---");
