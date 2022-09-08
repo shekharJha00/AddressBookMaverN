@@ -6,7 +6,6 @@ import java.util.List;
 public class Contact {
     List<Person> PERSON = new ArrayList<>();
 
-    //	ADD METHOD
     public void addRecord() {
         final String firstname, lastname, address, city, state, phone, zip;
 
@@ -26,9 +25,7 @@ public class Contact {
         state = InputUtil.getStringValue();
 
         PERSON.add(new Person(firstname, lastname, address, city, state, phone, zip));
-    } // END of addRecord()
-
-    //	DISPLAY METHOD
+    }
     public void displayRecord() {
         for (Person person : PERSON) {
             System.out.println(person);
@@ -100,4 +97,16 @@ public class Contact {
             System.out.println(PERSON.get(id));
         }
     }
+
+    public void deleteRecord() {
+        int id;
+        for(Person p: PERSON)
+        {
+            System.out.println("ID: #"+PERSON.indexOf(p)+" : "+p);
+        }
+        System.out.print("\nEnter #ID to delete Contact : ");
+        id = InputUtil.getIntValue();
+        PERSON.remove(id);
+    }
 }
+
