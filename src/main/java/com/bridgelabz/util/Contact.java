@@ -1,6 +1,8 @@
 package com.bridgelabz.util;
 
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Hashtable;
 import java.util.List;
 
 public class Contact {
@@ -140,11 +142,12 @@ public class Contact {
     }
     public void searchByCityState()
     {
-        int choice=0;
-        System.out.println("Search By\n" +
-                "1: City\n" +
-                "2: State\n" +
-                "3: back");
+        int choice;
+        System.out.println("""
+                Search By
+                1: City
+                2: State
+                3: back""");
         choice=InputUtil.getIntValue();
         switch (choice)
         {
@@ -159,6 +162,37 @@ public class Contact {
             default:
                 System.out.println("Enter Valid Option");
         }
+    }
+    public void viewByCityAndState()
+    {
+        Dictionary<String ,String> cityDict = createCityDict();
+        Dictionary<String ,String> stateDict = createStateDict();
+        final String city,state;
+        System.out.println("Enter City");
+        city=InputUtil.getStringValue();
+        System.out.println("Enter State");
+        state=InputUtil.getStringValue();
+        Search.searchByCityAndState(cityDict,stateDict);
+    }
+    public Dictionary<String,String> createCityDict()
+    {
+        Dictionary<String,String> cityDict = new Hashtable<>();
+        for (Person person:PERSON)
+        {
+            cityDict.put(person.getFirstName(),person.getCity());
+        }
+        return cityDict;
+    }
+
+
+    public Dictionary<String,String> createStateDict()
+    {
+        Dictionary<String,String> stateDict = new Hashtable<>();
+        for (Person person:PERSON)
+        {
+            stateDict.put(person.getFirstName(),person.getState());
+        }
+        return stateDict;
     }
 
 
