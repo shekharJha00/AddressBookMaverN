@@ -1,13 +1,14 @@
 package com.bridgelabz.main;
 
-import com.bridgelabz.util.Contact;
+import com.bridgelabz.util.AddressBookException;
+import com.bridgelabz.util.AddressBookService;
 import com.bridgelabz.util.InputUtil;
 
 public class AddressBook {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws AddressBookException {
 
-        int choice, i = 0;
-        final Contact contactDetails = new Contact();
+        int  i = 0;
+        final AddressBookService contactDetails = new AddressBookService();
         while (i == 0) {
             {
                 System.out.println("--- Address Book ---\n");
@@ -17,21 +18,19 @@ public class AddressBook {
                 System.out.println("3: Edit Person     ");
                 System.out.println("4: Delete Person     ");
                 System.out.println("5: Search");
-                System.out.println("6: View Person By State and City");
-                System.out.println("7: Sort Person");
-                System.out.println("8: Exit		       \n");
+                System.out.println("6: Sort Person");
+                System.out.println("7: Exit		       \n");
 
                 System.out.println("--- Enter Your Choice ---");
-                choice = InputUtil.getIntValue();
+                int choice = InputUtil.getIntValue();
                 switch (choice) {
                     case 1 -> contactDetails.addRecord();
                     case 2 -> contactDetails.displayRecord();
                     case 3 -> contactDetails.editRecord();
                     case 4 -> contactDetails.deleteRecord();
-                    case 5 ->contactDetails.searchByCityState();
-                    case 6 ->contactDetails.viewByCityAndState();
-                    case 7 ->contactDetails.sortRecords();
-                    case 8 -> i = 1;
+                    case 5 ->contactDetails.searchInRecords();
+                    case 6 ->contactDetails.sortRecords();
+                    case 7 -> i = 1;
                     default -> System.out.println("Please Enter Valid Option!!!");
                 }
             }
