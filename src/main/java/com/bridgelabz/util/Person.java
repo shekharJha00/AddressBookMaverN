@@ -1,7 +1,5 @@
 package com.bridgelabz.util;
 
-import java.util.Comparator;
-
 public class Person {
     private String  firstName, lastName, address, city, state, phone,zip;
 
@@ -15,32 +13,6 @@ public class Person {
         this.phone = phone;
         this.zip = zip;
     }
-    public static Comparator<Person> firstNameSorting = (p1, p2) -> {
-        String firstname1 = p1.getFirstName();
-        String firstname2 = p2.getFirstName();
-
-        return firstname1.compareTo(firstname2);
-    };
-    public static Comparator<Person> citySorting = (p1, p2) -> {
-        String city1 = p1.getCity();
-        String city2 = p2.getCity();
-
-        return city1.compareToIgnoreCase(city2);
-    };
-
-    public static Comparator<Person> stateSorting = (p1, p2) -> {
-        String state1 = p1.getState();
-        String state2 = p2.getState();
-
-        return state1.compareToIgnoreCase(state2);
-    };
-
-    public static Comparator<Person> zipSorting = (p1, p2) -> {
-        String zip1 = p1.getZip();
-        String zip2 = p2.getZip();
-
-        return zip1.compareToIgnoreCase(zip2);
-    };
 
     public String getFirstName()
     {
