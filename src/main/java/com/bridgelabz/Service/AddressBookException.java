@@ -1,4 +1,4 @@
-package com.bridgelabz.util;
+package com.bridgelabz.Service;
 
 public class AddressBookException extends Exception{
 

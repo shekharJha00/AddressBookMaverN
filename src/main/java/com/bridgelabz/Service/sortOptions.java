@@ -1,4 +1,6 @@
-package com.bridgelabz.util;
+package com.bridgelabz.Service;
+
+import com.bridgelabz.util.Person;
 
 import java.util.Comparator;
 
