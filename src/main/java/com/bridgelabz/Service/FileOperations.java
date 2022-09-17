@@ -1,5 +1,6 @@
-package com.bridgelabz.util;
+package com.bridgelabz.Service;
 
+import com.bridgelabz.util.Person;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.bean.StatefulBeanToCsv;
@@ -16,10 +17,11 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.LinkedList;
+import java.util.List;
 
 public class FileOperations {
 
-    public void convertToFile(LinkedList<Person> addressBook, String filePath, int fileOperations) {
+    public void convertToFile(List<Person> addressBook, String filePath, int fileOperations) {
         switch (fileOperations) {
             case 1:
                 JSONArray personList = new JSONArray();

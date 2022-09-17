@@ -6,10 +6,10 @@ INSERT INTO `address_book_service`.`address_book` (`firstName`, `lastName`, `Add
 INSERT INTO `address_book_service`.`address_book` (`firstName`, `lastName`, `Address`, `City`, `State`, `Zip`, `PhoneNumber`) VALUES ('Naman', 'Nagwani', 'Chattisgarh', 'Chattisgarh', 'Chattisgarh', '12345', '8888888888');
 UPDATE address_book SET Address = ‘Chennai’ WHERE firstName = ‘Shekhar’ ;
 UPDATE address_book SET PhoneNumber = 1234567788 WHERE firstName = ‘Naman’ ;
-DELETE FROM address_book WHERE firstName = 'Naman' ;
+DELETE FROM address_book WHERE firstName = 'Naman';
 SELECT * FROM address_book WHERE City = 'Ranchi' OR State = 'Jharkhand' ;
-SELECT COUNT (city OR state )  FROM address_book ;
-SELECT firstName, City FROM address_book ORDER BY firstName ;
+SELECT COUNT (city OR state ) FROM address_book;
+SELECT firstName, City FROM address_book ORDER BY firstName;
 ALTER TABLE  address_book ADD type VARCHAR(35) AFTER lastName;
 UPDATE address_book SET type = ‘Family’ WHERE firstName = ‘Shekhar’;
 UPDATE address_book SET type = ‘Friends’ WHERE firstName = ‘Naman’;
